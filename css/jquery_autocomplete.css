@@ -1,0 +1,45 @@
+.ui-autocomplete {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 100;
+	float: left;
+	display: none;
+	padding-top: 16px;
+	background: #fff;
+	border-radius: 0;
+	font-family: 'Open Sans', sans-serif;
+	padding-left: 9px;
+	padding-bottom: 8px;
+	border-bottom-left-radius: 0.12em;
+	border-bottom-right-radius: 0.12em;
+	overflow-x: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+	width: 100px;
+}
+
+.ui-menu-item > a.ui-corner-all {
+	display: block;
+	padding: 6px;
+	clear: both;
+	font-weight: normal;
+	line-height: 18px;
+	color: #555;
+	white-space: nowrap;
+	text-decoration: none;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+.ui-state-hover, .ui-state-active {
+	color: #666;
+	text-decoration: none;
+	border-radius: none;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #eee;	
+}
+
+.ui-helper-hidden-accessible {
+	display: none;
+}
