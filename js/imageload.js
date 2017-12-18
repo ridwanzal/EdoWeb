@@ -59,15 +59,60 @@ var imageLoad = {
         console.log("image method");
         $.each(img, function(i, src){
             console.log("index i : "+ i);
-            var li = $('<li class="load">').appendTo(ulid);
-            $('<img>').appendTo(li).one('load', function(){
+            var li = $('<li class="load_list_img">').appendTo(ulid);
+            $('<img class="galhover">').appendTo(li).one('load', function(){
             }).attr('src', src);
+            if(i == 7){
+                li = li + "<br/>";
+            }
         });
     },
     hide : function(ulid){
         $(ulid).remove();
     },
-    hover : function(){
-    }
+}
+
+/* module for using animate css dynamically */
+var animate_el = {
+    // init element
+    init : function(element, animation){
+        element = $(element);
+        element.addClass('animated ' + animation);
+    },
+    // hover element
+    hover : function(element, animation){
+        element = $(element);
+        element.hover(
+            function() {
+                element.addClass('animated ' + animation);        
+            },
+            function(){
+                //wait for animation to finish before removing classes
+                window.setTimeout( function(){
+                    element.removeClass('animated ' + animation);
+                }, 2000);         
+            });
+    },
+    hoverOverlay : function(elementToOverlay, classOverlay){
+        console.log("masuk sini pas hover");
+        element = $(elementToOverlay);
+        element.hover(function(callbackhover){
+            console.log("callback hover : " + callbackhover);
+            $(this).delay(200).addClass(classOverlay);
+        }).mouseleave(function(){
+            $(this).removeClass(classOverlay);
+        });
+    },
+    // click element
+    click : function(element, animation){
+        element = $(element);
+        element.click(function(){
+            element.addClass('animated ' + animation);
+            // wait for animation to finish before removing the class
+            window.setTimeout(function(){
+                element.removeClass('animated ' + animation);
+            }, 2000);
+        });
+    } 
 }
 

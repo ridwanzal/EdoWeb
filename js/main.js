@@ -1,14 +1,9 @@
+
 /*------------------------------------------------------
  Author 		: M. Ridwan Zalbina
  Project		: Portofolio Website
  Start Date	: Dec 1, 2016
  ------------------------------------------------------*/
-var globalRes = {
-    log: "[Logger] ",
-    error: "[Error] ",
-    info: "[Info] "
-};
-
 var element = {
     attrslen: function (elemclass) {
         document.getElementsByClassName(elemclass).attributes.length;
@@ -100,11 +95,14 @@ $(document).ready(function () {
             $this.fadeIn(500);
         });
     }, 3500);
-    $('.galhover').hover(function () {
-        $(this).delay(500).addClass('overlay');
-    }).mouseleave(function () {
-        $(this).removeClass('overlay');
-    });
+
+    // $('.galhover').hover(function () {
+    //     $(this).delay(500).addClass('overlay');
+    // }).mouseleave(function () {
+    //     $(this).removeClass('overlay');
+    // });
+
+    animate_el.hoverOverlay(idToOverlay, classOverlay);
 
     function myMap() {
         console.log("Masuk map nih");
@@ -190,6 +188,8 @@ $(document).ready(function () {
     try {
         var ulid  = $('#imageList');
         imageLoad.load(imageslist, ulid);
+        // animate the element of the icon
+        animate_el.hoverOverlay(idToOverlay, classOverlay);
     } catch (error) {
         console.log("err : " + error);
     }
