@@ -310,3 +310,16 @@ nav > .mynav{
 .load_list_img{
 	padding-bottom: 10px;
 }
+
+/*
+store all media query down here
+*/
+
+@media screen and (max-width: 960px) {
+    #li_maps{
+        display: none;
+    }
+    #li_clock{
+        display: none;
+    }
+}
