@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+var path = "/home/ridwanzal/NetBeansProjects/EdoWeb/public_html/myweb/img/gallery/";
+
 var imageGallery = {
     load: function () {
-        var path = "/home/ridwanzal/NetBeansProjects/EdoWeb/public_html/myweb/img/gallery/";
         console.log("load image gallery");
         try {
             console.log("path res : " + path);
@@ -47,25 +49,35 @@ var localLoad = {
     load: function () {
         var url = '/home/ridwanzal/NetBeansProjects/EdoWeb/public_html/myweb/json/image.json';
         console.log("local load");
-        $.getJSON(url, function (data) {
-            console.log("get json")
-            console.log("data callback : " + data);
-        });
+        try {
+            $.getJSON(url, function (data) {
+                console.log("get json")
+                console.log("data callback : " + data);
+            });
+        }
+        catch (e){
+            console.log("" + e);
+        }
     }
 }
 
 var imageLoad = {
     load : function(img, ulid){
         console.log("image method");
-        $.each(img, function(i, src){
-            console.log("index i : "+ i);
-            var li = $('<li class="load_list_img">').appendTo(ulid);
-            $('<img class="galhover">').appendTo(li).one('load', function(){
-            }).attr('src', src);
-            if(i == 7){
-                li = li + "<br/>";
-            }
-        });
+        try {
+            $.each(img, function(i, src){
+                console.log("index i : "+ i);
+                var li = $('<li class="load_list_img">').appendTo(ulid);
+                $('<img class="galhover">').appendTo(li).one('load', function(){
+                }).attr('src', src);
+                if(i == 7){
+                    li = li + "<br/>";
+                }
+            });
+        }
+        catch (e){
+            console.log("" + e);
+        }
     },
     hide : function(ulid){
         $(ulid).remove();
