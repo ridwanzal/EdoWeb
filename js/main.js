@@ -1,7 +1,7 @@
 
 /*------------------------------------------------------
- Author 		: M. Ridwan Zalbina
- Project		: Portofolio Website
+ Author 	: M. Ridwan Zalbina
+ Project	: Portofolio Website
  Start Date	: Dec 1, 2016
  ------------------------------------------------------*/
 var element = {
